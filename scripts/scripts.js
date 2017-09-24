@@ -17,7 +17,6 @@ $(document).ready(function() {
     console.log(response);
   });
 
-
   // create static buttons
   function createButtons() {
     // iterate through list of bears
@@ -35,29 +34,9 @@ $(document).ready(function() {
     }
   }
   createButtons();
-  $('this.btn').val();
-
-
-
-  // const PUBLIC_KEY = 'dc6zaTOxFJmzC';
-  // const BASE_URL = '//api.giphy.com/v1/gifs/search?q=polar_bears&limit=1&rating=pg&api_key=dc6zaTOxFJmzC';
-  // const ENDPOINT = 'search';
-  // const LIMIT = 1;
-  // const RATING = 'pg';
-  //
-  // let $queryInput = $('.query');
-  // let $resultWrapper = $('.result');
-  // let $loader = $('.loader');
-  // let $inputWrapper = $('.input-wrapper');
-  // let $clear = $('.clear');
-  // let $button = $('.random');
-  // let currentTimeout;
-  //
-  // let query = {
-  //   text: null,
-  //   offset: 0,
-  //   request() {
-  //     return `${BASE_URL}${ENDPOINT}?q=${this.text}&limit=${LIMIT}&rating=${RATING}&offset=${this.offset}&api_key=${PUBLIC_KEY}`;
-  //   },
+  
+  $('#animal-btns .bear').on("click",function(){
+      console.log(this.value);
+  });
 
 });
