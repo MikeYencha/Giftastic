@@ -4,3 +4,6 @@
 .clear {
   clear: both;
 }
+.pointer {
+  cursor: pointer;
+}
