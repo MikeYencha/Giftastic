@@ -20,6 +20,7 @@ var bears = ['polar_bears','panda_bears','black_bears','brown_bears','grizzley_b
   }
   createButtons();
 
+  // populate screen with gifs based on button names
   $('#animal-btns .bear').on("click",function() {
       $('#animal-gifs').empty();
       // capture search by button value
@@ -72,5 +73,23 @@ var bears = ['polar_bears','panda_bears','black_bears','brown_bears','grizzley_b
           })
         });
       });
+      $('#gif-input').attr('placeholder','this is not ready :(');
+
+      // create search input and display function
+      // $('#find-gif').on('click',function() {
+      //   // because we need it
+      //   event.preventDefault();
+      //   // create container to hold value of input
+      //   var gif = $('#gif-input').val();
+      //   // create query for ajax search of giphy
+      //   var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + gif + '&api_key=dc6zaTOxFJmzC&limit=10';
+      //   // ajax call
+      //   $.ajax({
+      //     url: queryURL,
+      //     method: 'GET'
+      //   }).done(function(response) {
+      //
+      //   });
+      // });
 
 }); // end of jquey
