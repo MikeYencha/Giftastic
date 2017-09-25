@@ -4,23 +4,13 @@ $(document).ready(function() {
   // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     // animal + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-  var base = '//api.giphy.com/v1/gifs/';
-  var endpoint = 'search?q=';
-  var bears = ['polar_bears','panda_bears','black_bears','brown_bears','grizzley_bears'];
-  var limit = '&limit=10';
-  var rating = '&rating=pg';
-  var key = '&api_key=dc6zaTOxFJmzC';
-  var bearImg = $('<img>');
-
-  // $("button").on("click", function()
-  // // my ajax call to giphy
-  // $.ajax({
-  //   url: queryURL,
-  //   method: 'GET'
-  // }).done(function(response) {
-  //   console.log(response);
-  // });
-
+  // var base = '//api.giphy.com/v1/gifs/';
+  // var endpoint = 'search?q=';
+  //
+  // var limit = '&limit=10';
+  // var rating = '&rating=pg';
+  // var key = '&api_key=dc6zaTOxFJmzC';
+var bears = ['polar_bears','panda_bears','black_bears','brown_bears','grizzley_bears'];
   // create static buttons
   function createButtons() {
     // iterate through list of bears
@@ -40,7 +30,10 @@ $(document).ready(function() {
   createButtons();
 
   $('#animal-btns .bear').on("click",function() {
+      $('#animal-gifs').empty();
       var bearSearch = this.value;
+      // var bearType = this.attr('data-type')
+      console.log(this.value);
       // var x = this.value;
       var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         bearSearch + "&api_key=dc6zaTOxFJmzC&limit=10";
@@ -53,7 +46,17 @@ $(document).ready(function() {
           var results = response.data;
           console.log(results);
           for(var i=0;i<results.length;i++) {
-            console.log(response.data[i]);
+            // console.log(response.data[i]);
+            var bearDiv = $('<div class="left ml-2 mb-2">')
+            var bearImg = $('<img>');
+            var p = $('<p>').text(results[i].rating);
+            console.log(results[i].rating);
+            bearImg.attr('src', results[i].images.fixed_height_small.url);
+            bearDiv.append(p);
+            bearDiv.append(bearImg);
+            console.log(results[i].images.fixed_height_small.url);
+            console.log(bearDiv);
+            $('#animal-gifs').append(bearDiv);
           }
         });
       });
