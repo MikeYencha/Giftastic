@@ -9,7 +9,7 @@ var bears = ['polar_bears','panda_bears','black_bears','brown_bears','grizzley_b
       // create a variable to hold button
       var btn = $('<button>');
       // add classes to bear btn
-      btn.addClass('bear btn btn-success mr-2');
+      btn.addClass('bear btn btn-outline-primary mr-2');
       // add attribute to btn
       btn.val(bears[i]);
       // add btn text
